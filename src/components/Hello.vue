@@ -25,9 +25,8 @@
         <i class="sidebar icon"></i>
       </a>
   	  <a class="active item">Home</a>
-  	  <a class="item">Work</a>
-  	  <a class="item">Company</a>
-  	  <a class="item">Careers</a>
+  	  <a class="item">Trending</a>
+  	  <a class="item">Live</a>
   	  <a class="item">Login</a>
   	  <a class="item">Signup</a>
   	</div>
@@ -43,9 +42,8 @@
     			  <i class="sidebar icon"></i>
     			</a>
     			<a class="active item">Home</a>
-    			<a class="item">Work</a>
-    			<a class="item">Company</a>
-    			<a class="item">Careers</a>
+    			<a class="item">Trending</a>
+    			<a class="item">Live</a>
     			<div class="right item">
     			  <a class="ui inverted button">Log in</a>
     			  <a class="ui inverted button">Sign Up</a>
@@ -55,10 +53,13 @@
 
   		<div class="ui text container">
   		  <h1 class="ui inverted header">
-  			Imagine-a-Company
+  			Music Cloud
   		  </h1>
-  		  <h2>Do whatever you want when you want to.</h2>
-  		  <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+  		  <h3>Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</h3>
+        <div id="search-bar" class="ui huge inverted transparent icon input">
+          <input type="text" placeholder="Search for artists, bands, tracks, podcasts..">
+          <i class="search icon"></i>
+        </div>
   		</div>
 
   	  </div>
@@ -66,19 +67,27 @@
   	  <div class="ui vertical stripe segment">
   		<div class="ui middle aligned stackable grid container">
   		  <div class="row">
-  			<div class="eight wide column">
-  			  <h3 class="ui header">We Help Companies and Companions</h3>
-  			  <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-  			  <h3 class="ui header">We Make Bananas That Can Dance</h3>
-  			  <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+  			<div class="seven wide column">
+  			  <h3 class="ui header">Connect on MusicCloud</h3>
+  			  <p>Get on SoundCloud to connect with fans, share your sounds, and grow your audience.</p>
+  			  <h3 class="ui header">We Make Trends</h3>
+  			  <p>Hear what’s trending for free in the MusicCloud community.</p>
   			</div>
-  			<div class="six wide right floated column">
-  			  <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
+  			<div class="seven wide right floated column">
+  			  <!-- <img src="/static/images/mbls.png" class="ui large bordered rounded image"> -->
+          <div class="ui small images">
+            <img src="/static/images/song1.png">
+            <img src="/static/images/song2.png">
+            <img src="/static/images/song3.png">
+            <img src="/static/images/song4.png">
+            <img src="/static/images/song5.png">
+            <img src="/static/images/song6.png">
+          </div>
   			</div>
   		  </div>
   		  <div class="row">
   			<div class="center aligned column">
-  			  <a class="ui huge button">Check Them Out</a>
+  			  <a class="ui large basic secondary button">Explore Top Charts</a>
   			</div>
   		  </div>
   		</div>
@@ -86,33 +95,39 @@
 
 
   	  <div class="ui vertical stripe quote segment">
-  		<div class="ui equal width stackable internally celled grid">
-  		  <div class="center aligned row">
-  			<div class="column">
-  			  <h3>"What a Company"</h3>
-  			  <p>That is what they all say about us</p>
+  		<div class="ui equal width stackable grid">
+  		  <div class="centered row">
+        <div class="one wide column"></div>
+  			<div class="six wide center aligned column">
+  			  <h3>Never stop listening</h3>
+  			  <p>MusicCloud is available on Web, Mobile, Sonos, Google Chromecast, and Microsoft Xbox One</p>
+          <p>Get it on</p>
+          <div class="ui big basic buttons">
+            <button class="ui  button"><i class="apple icon"></i>App Store</button>
+            <div class="or"></div>
+            <button class="ui button"><i class="play icon"></i>Google Play</button>
+          </div>
   			</div>
-  			<div class="column">
-  			  <h3>"I shouldn't have gone with their competitor."</h3>
+        <div class="two wide column"></div>
+  			<div class="seven wide center aligned column">
   			  <p>
-  				<img src="assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
+  				<img class="ui large image" src="/static/images/mbls.png">
+          <!-- <b>Nan</b> Chief Fun Officer Acme Toys -->
   			  </p>
   			</div>
   		  </div>
   		</div>
   	  </div>
 
-  	  <div class="ui vertical stripe segment">
+  	  <div class="ui vertical stripe center aligned segment">
   		<div class="ui text container">
-  		  <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
-  		  <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
-  		  <a class="ui large button">Read More</a>
-  		  <h4 class="ui horizontal header divider">
-  			<a href="#">Case Studies</a>
-  		  </h4>
-  		  <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
-  		  <p>Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
-  		  <a class="ui large button">I'm Still Quite Interested</a>
+  		  <h3 class="ui header">Calling all creators</h3>
+  		  <p>Get on SoundCloud to connect with fans, share your sounds, and grow your audience. What are you waiting for?</p>
+  		  <a class="ui secondary basic large button">Find out more</a>
+
+  		  <h3 class="ui header">Thanks for listening. Now join in.</h3>
+  		  <p>Save tracks, follow artists and build playlists. All for free.</p>
+  		  <a class="ui secondary large button">Create Account</a>
   		</div>
   	  </div>
 
@@ -121,26 +136,28 @@
   		<div class="ui container">
   		  <div class="ui stackable inverted divided equal height stackable grid">
   			<div class="three wide column">
-  			  <h4 class="ui inverted header">About</h4>
+  			  <h4 class="ui inverted header">Get in touch</h4>
   			  <div class="ui inverted link list">
-  				<a href="#" class="item">Sitemap</a>
   				<a href="#" class="item">Contact Us</a>
-  				<a href="#" class="item">Religious Ceremonies</a>
-  				<a href="#" class="item">Gazebo Plans</a>
+  				<a href="#" class="item">Blog</a>
   			  </div>
   			</div>
   			<div class="three wide column">
   			  <h4 class="ui inverted header">Services</h4>
   			  <div class="ui inverted link list">
-  				<a href="#" class="item">Banana Pre-Order</a>
-  				<a href="#" class="item">DNA FAQ</a>
-  				<a href="#" class="item">How To Access</a>
-  				<a href="#" class="item">Favorite X-Men</a>
+  				<a href="#" class="item">Shop</a>
+  				<a href="#" class="item">Stream</a>
+  				<a href="#" class="item">API</a>
+  				<a href="#" class="item">Hire Us</a>
+
   			  </div>
   			</div>
   			<div class="seven wide column">
-  			  <h4 class="ui inverted header">Footer Header</h4>
-  			  <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+  			  <h4 class="ui inverted header">About M Cloud</h4>
+  			  <p>As the world’s largest music and audio platform, MusicCloud lets people discover and enjoy the greatest
+            selection of music from the most diverse creator community on earth. Since launching in 2008, the platform
+            has become renowned for its unique content and features, including the ability to share music and connect
+            directly with artists, as well as unearth breakthrough tracks, raw demos, podcasts and more. </p>
   			</div>
   		  </div>
   		</div>
@@ -151,7 +168,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
 
 export default {
   name: 'hello',
@@ -169,28 +185,9 @@ export default {
   },
   created () {
     console.log(this.$el)
-  },
-  mounted () {
-    var $ = Vue.$
-    $(document)
-      .ready(function () {
-        // fix menu when passed
-        $('.masthead')
-          .visibility({
-            once: false,
-            onBottomPassed: function () {
-              $('.fixed.menu').transition('fade in')
-            },
-            onBottomPassedReverse: function () {
-              $('.fixed.menu').transition('fade out')
-            }
-          })
-        // create sidebar and attach to menu open
-        $('.ui.sidebar')
-          .sidebar('attach events', '.toc.item')
-      })
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -198,6 +195,11 @@ export default {
 
   #sidebar-icon{
     padding-bottom: 30px;
+  }
+
+  #search-bar{
+    width: 500px;
+    margin-top: 20px;
   }
 
   .hidden.menu {
@@ -262,6 +264,12 @@ export default {
   }
 
   @media only screen and (max-width: 700px) {
+
+    #search-bar{
+      width: 300px;
+      margin-top: 20px;
+    }
+
     .ui.fixed.menu {
       display: none !important;
     }
