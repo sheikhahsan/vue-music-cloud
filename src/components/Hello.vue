@@ -1,66 +1,20 @@
 <template>
 <div>
 
-  	<!-- Following Menu -->
-  	<div class="ui large top fixed hidden menu">
-  	  <div class="ui container">
-  		<a class="active item">Home</a>
-  		<a class="item">Work</a>
-  		<a class="item">Company</a>
-  		<a class="item">Careers</a>
-  		<div class="right menu">
-  		  <div class="item">
-  			<a class="ui button">Log in</a>
-  		  </div>
-  		  <div class="item">
-  			<a class="ui primary button">Sign Up</a>
-  		  </div>
-  		</div>
-  	  </div>
-  	</div>
-
-  	<!-- Sidebar Menu -->
-  	<div :class="{'ui vertical nverted sidebar menu': true, visible: elementVisible.sidebar}">
-      <a id="sidebar-icon" class="toc item"  @click="toggleSidebar">
-        <i class="sidebar icon"></i>
-      </a>
-  	  <a class="active item">Home</a>
-  	  <a class="item">Trending</a>
-  	  <a class="item">Live</a>
-  	  <a class="item">Login</a>
-  	  <a class="item">Signup</a>
-  	</div>
-
-
   	<!-- Page Contents -->
   	<div class="pusher">
   	  <div class="ui inverted vertical masthead center aligned segment">
 
-  		<div class="ui container">
-  		  <div class="ui large secondary inverted pointing menu">
-    			<a class="toc item" @click="toggleSidebar">
-    			  <i class="sidebar icon"></i>
-    			</a>
-    			<a class="active item">Home</a>
-    			<a class="item">Trending</a>
-    			<a class="item">Live</a>
-    			<div class="right item">
-    			  <a class="ui inverted button">Log in</a>
-    			  <a class="ui inverted button">Sign Up</a>
-    			</div>
-  		  </div>
-  		</div>
-
-  		<div class="ui text container">
-  		  <h1 class="ui inverted header">
-  			Music Cloud
-  		  </h1>
-  		  <h3>Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</h3>
-        <div id="search-bar" class="ui huge inverted transparent icon input">
-          <input type="text" placeholder="Search for artists, bands, tracks, podcasts..">
-          <i class="search icon"></i>
+        <div class="ui text container">
+            <h1 class="ui inverted header">
+                Music Cloud
+            </h1>
+            <h3>Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.</h3>
+            <div id="search-bar" class="ui huge inverted transparent icon input">
+                <input type="text" placeholder="Search for artists, bands, tracks, podcasts..">
+                <i class="search icon"></i>
+            </div>
         </div>
-  		</div>
 
   	  </div>
 
@@ -97,18 +51,18 @@
   	  <div class="ui vertical stripe quote segment">
   		<div class="ui equal width stackable grid">
   		  <div class="centered row">
-        <div class="one wide column"></div>
+            <div class="one wide column"></div>
   			<div class="six wide center aligned column">
   			  <h3>Never stop listening</h3>
   			  <p>MusicCloud is available on Web, Mobile, Sonos, Google Chromecast, and Microsoft Xbox One</p>
-          <p>Get it on</p>
-          <div class="ui big basic buttons">
-            <button class="ui  button"><i class="apple icon"></i>App Store</button>
-            <div class="or"></div>
-            <button class="ui button"><i class="play icon"></i>Google Play</button>
-          </div>
+              <p>Get it on</p>
+              <div class="ui big basic buttons">
+                <button class="ui  button"><i class="apple icon"></i>App Store</button>
+                <div class="or"></div>
+                <button class="ui button"><i class="play icon"></i>Google Play</button>
+              </div>
   			</div>
-        <div class="two wide column"></div>
+            <div class="two wide column"></div>
   			<div class="seven wide center aligned column">
   			  <p>
   				<img class="ui large image" src="/static/images/mbls.png">
@@ -173,18 +127,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      elementVisible: {
-        sidebar: false
-      }
     }
-  },
-  methods: {
-    toggleSidebar () {
-      this.elementVisible.sidebar = !this.elementVisible.sidebar
-    }
-  },
-  created () {
-    console.log(this.$el)
   }
 }
 
@@ -192,10 +135,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-  #sidebar-icon{
-    padding-bottom: 30px;
-  }
 
   #search-bar{
     width: 500px;
