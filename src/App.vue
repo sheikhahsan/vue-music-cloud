@@ -19,7 +19,8 @@
       			<a class="toc item" @click="toggleSidebar">
       				<i class="sidebar icon"></i>
       			</a>
-      			<a class="item" v-for="(value, key) in pageRoutes" @click="goToRoute(value)">{{key}}</a>
+      			<a class="item" v-for="(value, key) in pageRoutes" @click="goToRoute(key,value)"
+      			:class='{active: currentPage==key}'>{{key}}</a>
       			<!-- <a class="active item">Home</a>
       			<a class="item">Trending</a> -->
       			<a class="item">Live</a>
@@ -43,6 +44,7 @@ export default {
 			elementVisible: {
 				sidebar: false
 			},
+			currentPage: 'Home',
 			pageRoutes: {
 				'Home': '/',
 				'Trending': '/trending'
@@ -53,7 +55,8 @@ export default {
 	    toggleSidebar () {
 	    	this.elementVisible.sidebar = !this.elementVisible.sidebar
 	    },
-	    goToRoute (path) {
+	    goToRoute (name,path) {
+	    	this.currentPage = name;
 	    	this.$router.push(path);
 	    }
 	}

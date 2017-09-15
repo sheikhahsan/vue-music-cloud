@@ -1,6 +1,6 @@
 <template>
 <div id ="player">
-	<hr>
+	<p></p>
 	<div class="ui sixteen column grid">
 		<!-- <div class="row"> -->
 			<div class="one wide column">
@@ -57,6 +57,7 @@
     position: fixed;
     height: 70px;   
     width: 100%; 
+	background-color: #151515;
 }
 
 .ui.mini.image{

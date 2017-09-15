@@ -34,41 +34,23 @@
 			</table> -->
 
 			<div class="ui five stackable cards">
-			  <div class="card">
-			    <div class="image">
-			      <img src="/static/images/elliot.jpg">
+			  <div v-for ="item in songsList"class="card" @mouseover="showHoverTransition(item.id)" @mouseout="hideHoverTransition">
+			    <div class="blurring dimmable image">
+			      <div :class="{'ui dimmer': true, 'transition visible active': item.id == hoverId}">
+			        <div class="content">
+			          <div class="center">
+			            <div class="ui inverted labeled icon button"><i class="play icon"></i>Play</div>
+			          </div>
+			        </div>
+			      </div>
+			      <img :src="item.img">
 			    </div>
 				<div class="content">
-					<a class="header" href="#">Steve Jobes</a>
+					<a class="header" href="#">{{item.song}}</a>
 					<div class="meta">
-						<a>by DJ Technics House</a>
+						by&nbsp<a>{{item.artist}}</a>
 					</div>
 				</div>
-			  </div>
-			  <div class="card">
-			    <div class="image">
-			      <img src="/static/images/helen.jpg">
-			    </div>
-			  </div>
-			  <div class="card">
-			    <div class="image">
-			      <img src="/static/images/jenny.jpg">
-			    </div>
-			  </div>
-			  <div class="card">
-			    <div class="image">
-			      <img src="/static/images/veronika.jpg">
-			    </div>
-			  </div>
-			  <div class="card">
-			    <div class="image">
-			      <img src="/static/images/stevie.jpg">
-			    </div>
-			  </div>
-			  <div class="card">
-			    <div class="image">
-			      <img src="/static/images/steve.jpg">
-			    </div>
 			  </div>
 			</div>
 		</div>
@@ -82,6 +64,84 @@ export default{
 	name: 'Trending',
 	components:{
 		Player
+	},
+	data () {
+		return{
+			songsList: [],
+			hoverId: -1
+		}
+	},
+	methods:{
+		showHoverTransition (id) {
+			this.hoverId = id;
+		},
+		hideHoverTransition () {
+			this.hoverId = -1;
+		}
+	},
+	created () {
+		this.songsList = [
+			{
+				id: 1,
+				song: "Hardwell On Air 334",
+				artist: "Hardwell",
+				img: "/static/images/hardwell.jpg"
+			},
+			{
+				id: 2,
+				song: "Perugia Cruising",
+				artist: "Claudio Iacono",
+				img: "/static/images/perugia.jpg"
+			},
+			{
+				id: 3,
+				song: "JuicyLand #186",
+				artist: "Juicy M",
+				img: "/static/images/juicyland.jpg"
+			},
+			{
+				id: 4,
+				song: "Ape Shi!t",
+				artist: "JD Boyz",
+				img: "/static/images/jd.jpg"
+			},
+			{
+				id: 5,
+				song: "Stars In The Ceiling",
+				artist: "Quavo",
+				img: "/static/images/stars.jpg"
+			},
+			{
+				id: 6,
+				song: "Patience (NOLA Mix)",
+				artist: "Pell",
+				img: "/static/images/patience.jpg"
+			},
+			{
+				id: 7,
+				song: "On The Set",
+				artist: "The Cool Kids",
+				img: "/static/images/cool.jpg"
+			},
+			{
+				id: 8,
+				song: "Hello (OZZIE Remix)",
+				artist: "adele",
+				img: "/static/images/hello.jpg"
+			},
+			{
+				id: 9,
+				song: "GREATEST OF ALL TIME",
+				artist: "EMINEM",
+				img: "/static/images/eminem.jpg"
+			},
+			{
+				id: 10,
+				song: "Drowning (Water)",
+				artist: "A-Boogie Wit Da Hoodie",
+				img: "/static/images/drowning.jpg"
+			}
+		]
 	}
 }
 </script>
@@ -91,6 +151,10 @@ export default{
   .segment {
     min-height: 700px;
     padding: 1em 0em;
+  }
+
+  .card:hover{
+
   }
 
 </style>
