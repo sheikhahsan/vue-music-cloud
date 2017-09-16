@@ -1,145 +1,99 @@
 <template>
 	<div class="ui inverted vertical segment">
 		<div class="ui container">
-<!-- 			<table class="ui inverted table">
-			  <thead>
-			    <tr>
-			      <th>Song</th>
-			      <th>Artist</th>
-			      <th>Notes</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <td>John</td>
-			      <td>Approved</td>
-			      <td>None</td>
-			    </tr>
-			    <tr>
-			      <td>Jamie</td>
-			      <td>Approved</td>
-			      <td>Requires call</td>
-			    </tr>
-			    <tr>
-			      <td>Jill</td>
-			      <td>Denied</td>
-			      <td>None</td>
-			    </tr>
-			  </tbody>
-			  <tfoot>
-			    <tr><th>3 People</th>
-			    <th>2 Approved</th>
-			    <th></th>
-			  </tr></tfoot>
-			</table> -->
-
 			<div class="ui five stackable cards">
-			  <div v-for ="item in songsList"class="card" @mouseover="showHoverTransition(item.id)" @mouseout="hideHoverTransition">
-			    <div class="blurring dimmable image">
-			      <div :class="{'ui dimmer': true, 'transition visible active': item.id == hoverId}">
-			        <div class="content">
-			          <div class="center">
-			            <div class="ui inverted labeled icon button"><i class="play icon"></i>Play</div>
-			          </div>
-			        </div>
-			      </div>
-			      <img :src="item.img">
-			    </div>
-				<div class="content">
-					<a class="header" href="#">{{item.song}}</a>
-					<div class="meta">
-						by&nbsp<a>{{item.artist}}</a>
-					</div>
-				</div>
-			  </div>
+				<music-card v-for="song in songsList" :song="song"></music-card>
 			</div>
 		</div>
-		<player id="player"></player>
 	</div>
 </template>
 
-<script>
-import Player from './Player'	
+<script>	
+import MusicCard from './MusicCard'
 export default{
 	name: 'Trending',
-	components:{
-		Player
-	},
 	data () {
 		return{
 			songsList: [],
 			hoverId: -1
 		}
 	},
+	components:{
+		MusicCard
+	},
 	methods:{
-		showHoverTransition (id) {
-			this.hoverId = id;
-		},
-		hideHoverTransition () {
-			this.hoverId = -1;
-		}
 	},
 	created () {
 		this.songsList = [
 			{
 				id: 1,
-				song: "Hardwell On Air 334",
+				title: "Hardwell On Air 334",
 				artist: "Hardwell",
-				img: "/static/images/hardwell.jpg"
+				img: "/static/images/hardwell.jpg",
+				duration: "4:25"
 			},
 			{
 				id: 2,
-				song: "Perugia Cruising",
+				title: "Perugia Cruising",
 				artist: "Claudio Iacono",
-				img: "/static/images/perugia.jpg"
+				img: "/static/images/perugia.jpg",
+				duration: "3:39"
 			},
 			{
 				id: 3,
-				song: "JuicyLand #186",
+				title: "JuicyLand #186",
 				artist: "Juicy M",
-				img: "/static/images/juicyland.jpg"
+				img: "/static/images/juicyland.jpg",
+				duration: "2:05"
 			},
 			{
 				id: 4,
-				song: "Ape Shi!t",
+				title: "Ape Shi!t",
 				artist: "JD Boyz",
-				img: "/static/images/jd.jpg"
+				img: "/static/images/jd.jpg",
+				duration: "3:50"
 			},
 			{
 				id: 5,
-				song: "Stars In The Ceiling",
+				title: "Stars In The Ceiling",
 				artist: "Quavo",
-				img: "/static/images/stars.jpg"
+				img: "/static/images/stars.jpg",
+				duration: "4:02"
 			},
 			{
 				id: 6,
-				song: "Patience (NOLA Mix)",
+				title: "Patience (NOLA Mix)",
 				artist: "Pell",
-				img: "/static/images/patience.jpg"
+				img: "/static/images/patience.jpg",
+				duration: "4:59"
 			},
 			{
 				id: 7,
-				song: "On The Set",
+				title: "On The Set",
 				artist: "The Cool Kids",
-				img: "/static/images/cool.jpg"
+				img: "/static/images/cool.jpg",
+				duration: "6:01"
 			},
 			{
 				id: 8,
-				song: "Hello (OZZIE Remix)",
+				title: "Hello (OZZIE Remix)",
 				artist: "adele",
-				img: "/static/images/hello.jpg"
+				img: "/static/images/hello.jpg",
+				duration: "5:25"
 			},
 			{
 				id: 9,
-				song: "GREATEST OF ALL TIME",
+				title: "GREATEST OF ALL TIME",
 				artist: "EMINEM",
-				img: "/static/images/eminem.jpg"
+				img: "/static/images/eminem.jpg",
+				duration: "4:10"
 			},
 			{
 				id: 10,
-				song: "Drowning (Water)",
+				title: "Drowning (Water)",
 				artist: "A-Boogie Wit Da Hoodie",
-				img: "/static/images/drowning.jpg"
+				img: "/static/images/drowning.jpg",
+				duration: "2:45"
 			}
 		]
 	}
@@ -151,10 +105,6 @@ export default{
   .segment {
     min-height: 700px;
     padding: 1em 0em;
-  }
-
-  .card:hover{
-
   }
 
 </style>

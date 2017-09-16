@@ -8,7 +8,7 @@
 		</a>
 		<a class="active item">Home</a>
 		<a class="item">Trending</a>
-		<a class="item">Live</a>
+		<a class="item">Discover</a>
 		<a class="item">Login</a>
 		<a class="item">Signup</a>
   	</div>
@@ -19,11 +19,14 @@
       			<a class="toc item" @click="toggleSidebar">
       				<i class="sidebar icon"></i>
       			</a>
+      			<a class="item logo" @click="goToRoute('Home','/')">
+      				<i class="mixcloud large icon"></i>MusicCloud
+  				</a>
       			<a class="item" v-for="(value, key) in pageRoutes" @click="goToRoute(key,value)"
       			:class='{active: currentPage==key}'>{{key}}</a>
       			<!-- <a class="active item">Home</a>
       			<a class="item">Trending</a> -->
-      			<a class="item">Live</a>
+      			<a class="item">Discover</a>
       			<div class="right item">
 					<a class="ui inverted button">Log in</a>
 					<a class="ui inverted button">Sign Up</a>
@@ -33,10 +36,12 @@
 	</div>
 
     <router-view></router-view>
+	<player id="player"></player>
   </div>
 </template>
 
 <script>
+import Player from './components/Player'
 export default {
 	name: 'app',
 	data () {
@@ -50,6 +55,9 @@ export default {
 				'Trending': '/trending'
 			}
 	  	}
+	},
+	components:{
+		Player
 	},
 	methods: {
 	    toggleSidebar () {
@@ -65,6 +73,14 @@ export default {
 
 <style scoped>
 
+	.logo{
+		font-family: "Trebuchet MS";
+		font-style: italic;
+		font-weight: bold;
+		margin-bottom: 0px;
+		max-height: 40px;
+	}
+
 	#sidebar-icon{
 		padding-bottom: 30px;
 	}
@@ -79,6 +95,9 @@ export default {
 	@media only screen and (max-width: 700px) {
 		.secondary.pointing.menu .toc.item {
 			display: block;
+		}
+		.secondary.pointing.menu .item{
+			display: none;
 		}
 	}
 </style>

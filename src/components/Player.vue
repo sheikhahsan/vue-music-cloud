@@ -1,14 +1,14 @@
 <template>
-<div id ="player">
+<div id ="player" v-if="song.id">
 	<p></p>
 	<div class="ui sixteen column grid">
 		<!-- <div class="row"> -->
 			<div class="one wide column">
-	    		<img class="ui mini image" src="/static/images/song1.png">
+	    		<img class="ui mini image" :src="song.img">
 			</div>
 			<div class="two wide column">
-				<div class="ui text">Quavo</div>
-				<div class="ui sa-bold text">Stars In The Ceiling</div>
+				<div class="ui text">{{song.artist}}</div>
+				<div class="ui sa-bold text">{{song.title}}</div>
 			</div>
 			<div class="column">
 				<i class="large step backward icon"></i>
@@ -25,7 +25,7 @@
 				<div class="ui twelve column grid">
 					<div class="five wide column">
 						<div class="ui sa-bod text icon">
-						0:07/3:39
+						0:00/{{song.duration}}
 						</div>
 					</div>
 					<div class="two wide column">
@@ -48,6 +48,16 @@
 </div>
 </template>
 
+<script>
+export default{
+	name: 'Player',
+	computed:{
+		song () {
+			return this.$store.state.song;
+		}
+	}
+}
+</script>
 
 <style scoped>
 #player {
@@ -61,6 +71,8 @@
 }
 
 .ui.mini.image{
+	min-height: 50px;
+	min-width: 50px;
 	width: 50px;
 	height: 50px;
 	margin-left: 10px;
