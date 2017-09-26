@@ -10,6 +10,7 @@
 
 <script>	
 import MusicCard from './MusicCard'
+import songsListJSON from './songs-list.json'
 export default{
 	name: 'Trending',
 	data () {
@@ -24,78 +25,7 @@ export default{
 	methods:{
 	},
 	created () {
-		this.songsList = [
-			{
-				id: 1,
-				title: "Hardwell On Air 334",
-				artist: "Hardwell",
-				img: "/static/images/hardwell.jpg",
-				duration: "4:25"
-			},
-			{
-				id: 2,
-				title: "Perugia Cruising",
-				artist: "Claudio Iacono",
-				img: "/static/images/perugia.jpg",
-				duration: "3:39"
-			},
-			{
-				id: 3,
-				title: "JuicyLand #186",
-				artist: "Juicy M",
-				img: "/static/images/juicyland.jpg",
-				duration: "2:05"
-			},
-			{
-				id: 4,
-				title: "Ape Shi!t",
-				artist: "JD Boyz",
-				img: "/static/images/jd.jpg",
-				duration: "3:50"
-			},
-			{
-				id: 5,
-				title: "Stars In The Ceiling",
-				artist: "Quavo",
-				img: "/static/images/stars.jpg",
-				duration: "4:02"
-			},
-			{
-				id: 6,
-				title: "Patience (NOLA Mix)",
-				artist: "Pell",
-				img: "/static/images/patience.jpg",
-				duration: "4:59"
-			},
-			{
-				id: 7,
-				title: "On The Set",
-				artist: "The Cool Kids",
-				img: "/static/images/cool.jpg",
-				duration: "6:01"
-			},
-			{
-				id: 8,
-				title: "Hello (OZZIE Remix)",
-				artist: "adele",
-				img: "/static/images/hello.jpg",
-				duration: "5:25"
-			},
-			{
-				id: 9,
-				title: "GREATEST OF ALL TIME",
-				artist: "EMINEM",
-				img: "/static/images/eminem.jpg",
-				duration: "4:10"
-			},
-			{
-				id: 10,
-				title: "Drowning (Water)",
-				artist: "A-Boogie Wit Da Hoodie",
-				img: "/static/images/drowning.jpg",
-				duration: "2:45"
-			}
-		]
+		this.songsList = songsListJSON;
 	}
 }
 </script>

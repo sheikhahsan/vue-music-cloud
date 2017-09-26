@@ -2,7 +2,7 @@
   <div id="app">
 
    	<!-- Sidebar Menu -->
-  	<div :class="{'ui vertical nverted sidebar menu': true, visible: elementVisible.sidebar}">
+  	<div :class="{'ui vertical inverted sidebar menu': true, visible: elementVisible.sidebar}">
 		<a id="sidebar-icon" class="toc item"  @click="toggleSidebar">
 			<i class="sidebar icon"></i>
 		</a>
@@ -24,9 +24,6 @@
   				</a>
       			<a class="item" v-for="(value, key) in pageRoutes" @click="goToRoute(key,value)"
       			:class='{active: currentPage==key}'>{{key}}</a>
-      			<!-- <a class="active item">Home</a>
-      			<a class="item">Trending</a> -->
-      			<a class="item">Discover</a>
       			<div class="right item">
 					<a class="ui inverted button">Log in</a>
 					<a class="ui inverted button">Sign Up</a>
@@ -52,7 +49,8 @@ export default {
 			currentPage: 'Home',
 			pageRoutes: {
 				'Home': '/',
-				'Trending': '/trending'
+				'Trending': '/trending',
+				'Discover': '/discover'
 			}
 	  	}
 	},
