@@ -1,5 +1,13 @@
 <template>
 <div id ="player" v-if="song.id">
+  	<audio
+  		id="audio"
+		src="https://goo.gl/Kj3fUL"
+		@timeupdate="updateTime"
+		>
+		Your browser does not support the <code>audio</code> element.
+	</audio>
+
 	<p></p>
 	<div class="ui sixteen column grid">
 		<!-- <div class="row"> -->
@@ -13,8 +21,11 @@
 			<div class="column">
 				<i class="large step backward icon"></i>
 			</div>
-			<div class="column">
-				<i class="large play icon"></i>
+			<div class="column" v-show="paused">
+				<i class="large play icon" @click="play"></i>
+			</div>
+			<div class="column" v-show="played">
+				<i class="large pause icon" @click="pause"></i>
 			</div>
 			<div class="column">
 				<i class="large step forward icon"></i>
@@ -25,7 +36,7 @@
 				<div class="ui twelve column grid">
 					<div class="five wide column">
 						<div class="ui sa-bod text icon">
-						0:00/{{song.duration}}
+						{{durationPlayed.min+':'+durationPlayed.sec+'/'+song.duration}}
 						</div>
 					</div>
 					<div class="two wide column">
@@ -38,7 +49,7 @@
 						<i class="large empty star icon"></i>
 					</div>
 					<div class="two wide column">
-						<i class="big volume up icon"></i>
+						<i class="big volume up icon" @click="test"></i>
 					</div>
 				</div>
 			</div>
@@ -51,11 +62,57 @@
 <script>
 export default{
 	name: 'Player',
-	computed:{
+	data() {
+		return{	
+			played: false,
+			paused: true,
+			durationPlayed: {
+				min: '00',
+				sec: '00'
+			}
+		}
+	},
+	computed: {
 		song () {
 			return this.$store.state.song;
+		}//,
+		// minPlayed() {
+
+		// 	return minutes;
+		// },
+		// secPlayed() {
+		// 	const time = this.currentTime;
+		// 	const minutes = Math.floor(time / 60);
+		// 	const seconds = time - minutes * 60;
+		// 	return seconds;				
+		// }
+	},
+	methods: {
+		play() {
+			$('#audio')[0].play();
+			this.played = true;
+			this.paused = false;
+		},
+		pause() {
+			$('#audio')[0].pause();
+			this.paused = true;
+			this.played = false;
+		},
+		test() {
+		},
+		updateTime() {		
+			const time = $('#audio')[0].currentTime;
+			const minutes = Math.floor(time / 60);
+			const seconds = Math.floor(time - minutes * 60);
+			this.durationPlayed.min = minutes < 10 ? '0' + minutes : minutes; 
+			this.durationPlayed.sec = seconds < 10 ? '0' + seconds : seconds;
 		}
-	}
+	},
+    created() {
+        window.setInterval(() => {
+            this.now = Math.trunc((new Date()).getTime() / 1000);
+        },1000);
+    }
 }
 </script>
 

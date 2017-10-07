@@ -13,7 +13,7 @@
 		  <img :src="song.img">
 		</div>
 		<div class="content">
-			<a class="header" href="#">{{song.title}}</a>
+			<a class="header">{{song.title}}</a>
 			<div class="meta">
 				by&nbsp<a>{{song.artist}}</a>
 			</div>

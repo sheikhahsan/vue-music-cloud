@@ -81,7 +81,7 @@
 
   		  <h3 class="ui header">Thanks for listening. Now join in.</h3>
   		  <p>Save tracks, follow artists and build playlists. All for free.</p>
-  		  <a class="ui secondary large button">Create Account</a>
+  		  <a class="ui secondary large button" @click="openSignupModal">Create Account</a>
   		</div>
   	  </div>
 
@@ -127,6 +127,11 @@ export default {
   name: 'hello',
   data () {
     return {
+    }
+  },
+  methods: {
+    openSignupModal () {
+      $('#signup').modal('show');
     }
   }
 }

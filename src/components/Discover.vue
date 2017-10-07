@@ -7,7 +7,7 @@
 				<div class="four wide column">
 					<div class="ui inverted vertical pointing menu">
 						<a :class="{item: true, active: category==currentCategory}" v-for="category in categories"
-						@click="currentCategory=category">
+						@click="changeCategory(category)">
 							{{category}}
 						</a>
 					</div>
@@ -30,6 +30,7 @@
 <script>
 	import MusicCard from './MusicCard'
 	import songsListJSON from './songs-list.json'
+	import shuffle from 'shuffle-array'
 	export default{
 		name: 'Discover',
 		data () {
@@ -53,6 +54,12 @@
 		},
 		components:{
 			MusicCard
+		},
+		methods: {
+			changeCategory(category) {
+				shuffle(this.songsList);
+				this.currentCategory = category;
+			}
 		},
 		created () {
 			this.songsList = songsListJSON;

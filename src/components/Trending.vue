@@ -15,8 +15,7 @@ export default{
 	name: 'Trending',
 	data () {
 		return{
-			songsList: [],
-			hoverId: -1
+			songsList: []
 		}
 	},
 	components:{
