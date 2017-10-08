@@ -16,7 +16,7 @@ const store = new Vuex.Store({
   },
   mutations: {
     play (state,song) {
-		state.song = song;
+		  state.song = song;
     }
   }
 })
