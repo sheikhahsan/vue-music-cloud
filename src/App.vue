@@ -19,11 +19,13 @@
       			<a class="toc item" @click="toggleSidebar">
       				<i class="sidebar icon"></i>
       			</a>
-      			<a class="item logo" @click="goToRoute('Home','/')">
-      				<i class="mixcloud large icon"></i>MusicCloud
+      			<a class="item logo">
+      				<router-link to="/"><i class="mixcloud large icon"></i>MusicCloud</router-link>
   				</a>
-      			<a class="item" v-for="(value, key) in pageRoutes" @click="goToRoute(key,value)"
-      			:class='{active: currentPage==key}'>{{key}}</a>
+  				<a class="item" v-for="(value, key) in pageRoutes" 
+      			:class='{active: isActive(value)}'>
+      				<router-link :to="value">{{key}}</router-link>
+      			</a>
       			<div class="right item">
 					<a class="ui inverted button" @click="openLoginModal">Log in</a>
 					<a class="ui inverted button" @click="openSignupModal">Sign Up</a>
@@ -50,7 +52,6 @@ export default {
 			elementVisible: {
 				sidebar: false
 			},
-			currentPage: 'Home',
 			pageRoutes: {
 				'Home': '/',
 				'Trending': '/trending',
@@ -67,15 +68,14 @@ export default {
 	    toggleSidebar () {
 	    	this.elementVisible.sidebar = !this.elementVisible.sidebar
 	    },
-	    goToRoute (name,path) {
-	    	this.currentPage = name;
-	    	this.$router.push(path);
-	    },
 	    openSignupModal () {
 	    	$('#signup').modal('show');
 	    },
 	    openLoginModal() {
 	    	$('#login').modal('show');
+	    },
+	    isActive(path){
+	    	return path === this.$route.path
 	    }
 	}
 }

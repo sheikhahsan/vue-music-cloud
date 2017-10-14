@@ -2,10 +2,11 @@
 <div id ="player" v-if="song.id">
   	<audio
   		id="audio"
-		src="https://goo.gl/Kj3fUL"
+		:src="song.src"
 		@timeupdate = "updateCurrentTime"
 		@durationchange = "setDuration"
 		autoplay
+		:loop="loop"
 		>
 		Your browser does not support the <code>audio</code> element.
 	</audio>
@@ -45,7 +46,7 @@
 						<i class="large random icon"></i>
 					</div>
 					<div class="two wide column">
-						<i class="large retweet icon"></i>
+						<i :class="{'large retweet inverted icon': true, 'teal': loop}" @click="loop=!loop"></i>
 					</div>
 					<div class="two wide column">
 						<i class="large empty star icon"></i>
@@ -68,6 +69,7 @@ export default{
 		return{	
 			played: true,
 			paused: false,
+			loop: false,
 			duration: {
 				min: '00',
 				sec: '00'
@@ -81,6 +83,9 @@ export default{
 	},
 	computed: {
 		song () {
+			this.played = true;
+			this.paused = false;
+			console.log('song computed')
 			return this.$store.state.song;
 		}
 	},
@@ -114,9 +119,7 @@ export default{
 		}
 	},
     created() {
-        window.setInterval(() => {
-            this.now = Math.trunc((new Date()).getTime() / 1000);
-        },1000);
+    	console.log('created');
     }
 }
 </script>
