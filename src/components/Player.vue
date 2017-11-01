@@ -13,53 +13,50 @@
 
 	<p></p>
 	<div class="ui sixteen column grid">
-		<!-- <div class="row"> -->
-			<div class="one wide column">
-	    		<img class="ui mini image" :src="song.img">
-			</div>
-			<div class="two wide column">
-				<div class="ui text">{{song.artist}}</div>
-				<div class="ui sa-bold text">{{song.title}}</div>
-			</div>
-			<div class="column">
-				<i class="large step backward icon"></i>
-			</div>
-			<div class="column" v-show="paused">
-				<i class="large play icon" @click="play"></i>
-			</div>
-			<div class="column" v-show="played">
-				<i class="large pause icon" @click="pause"></i>
-			</div>
-			<div class="column">
-				<i class="large step forward icon"></i>
-			</div>
-			<div class="five wide column">
-			</div>
-			<div class="five wide right floated column">
-				<div class="ui twelve column grid">
-					<div class="five wide column">
-						<div class="ui sa-bod text icon">
-							{{ durationPlayed.min + ':' + durationPlayed.sec + '/' + duration.min + ':' + duration.sec }}
-						</div>
-					</div>
-					<div class="two wide column">
-						<a :href="song.src" download>
-							<i class="large arrow circle down icon"></i>
-						</a>
-					</div>
-					<div class="two wide column">
-						<i :class="{'large retweet inverted icon': true, 'teal': loop}" @click="loop=!loop"></i>
-					</div>
-					<div class="two wide column">
-						<i class="large empty star icon"></i>
-					</div>
-					<div class="two wide column">
-						<i class="big volume up icon"></i>
+		<div class="one wide column">
+    		<img class="ui mini image" :src="song.img">
+		</div>
+		<div class="two wide column">
+			<div class="ui text">{{song.artist}}</div>
+			<div class="ui sa-bold text">{{song.title}}</div>
+		</div>
+		<div class="column">
+			<a href="" @click.prevent><i class="large step backward inverted icon"></i></a>
+		</div>
+		<div class="column" v-show="paused">
+			<a href="" @click.prevent><i class="large play inverted icon" @click="play"></i></a>
+		</div>
+		<div class="column" v-show="played">
+			<a href="" @click.prevent><i class="large pause inverted icon" @click="pause"></i></a>
+		</div>
+		<div class="column">
+			<a href="" @click.prevent><i class="large step forward inverted icon"></i></a>
+		</div>
+		<div class="five wide column">
+		</div>
+		<div class="five wide right floated column">
+			<div class="ui twelve column grid">
+				<div class="five wide column">
+					<div class="ui sa-bod text icon">
+						{{ durationPlayed.min + ':' + durationPlayed.sec + '/' + duration.min + ':' + duration.sec }}
 					</div>
 				</div>
+				<div class="two wide column">
+					<a :href="song.src" download>
+						<i class="large arrow circle down inverted icon"></i>
+					</a>
+				</div>
+				<div class="two wide column">
+					<a href="" @click.prevent><i :class="{'large retweet inverted icon': true, 'teal': loop}" @click="loop=!loop"></i></a>
+				</div>
+				<div class="two wide column">
+					<i class="large empty star icon"></i>
+				</div>
+				<div class="two wide column">
+					<i class="big volume up icon"></i>
+				</div>
 			</div>
-
-		<!-- </div> -->
+		</div>
     </div>
 </div>
 </template>

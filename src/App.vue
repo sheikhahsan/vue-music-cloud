@@ -34,9 +34,7 @@
 		</div>
 	</div>
 
-
     <router-view></router-view>
-
 
 	<div class="ui inverted vertical footer segment">
   		<div class="ui container">
@@ -72,8 +70,6 @@
 	<player id="player"></player>
 	<signup id="signup"></signup>
 	<login id="login"></login>
-
-
 
   </div>
 </template>
