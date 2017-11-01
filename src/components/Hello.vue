@@ -86,7 +86,7 @@
   	  </div>
 
 
-  	  <div class="ui inverted vertical footer segment">
+  	  <!-- <div class="ui inverted vertical footer segment">
   		<div class="ui container">
   		  <div class="ui stackable inverted divided equal height stackable grid">
   			<div class="three wide column">
@@ -115,7 +115,7 @@
   			</div>
   		  </div>
   		</div>
-  	  </div>
+  	  </div> -->
   	</div>
 
 </div>
@@ -197,10 +197,6 @@ export default {
   .quote.stripe.segment .grid .column {
     padding-top: 5em;
     padding-bottom: 5em;
-  }
-
-  .footer.segment {
-    padding: 5em 0em;
   }
 
   .secondary.pointing.menu .toc.item {

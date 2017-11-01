@@ -43,7 +43,9 @@
 						</div>
 					</div>
 					<div class="two wide column">
-						<i class="large random icon"></i>
+						<a :href="song.src" download>
+							<i class="large arrow circle down icon"></i>
+						</a>
 					</div>
 					<div class="two wide column">
 						<i :class="{'large retweet inverted icon': true, 'teal': loop}" @click="loop=!loop"></i>
@@ -52,7 +54,7 @@
 						<i class="large empty star icon"></i>
 					</div>
 					<div class="two wide column">
-						<i class="big volume up icon" @click="test"></i>
+						<i class="big volume up icon"></i>
 					</div>
 				</div>
 			</div>
@@ -101,7 +103,7 @@ export default{
 			this.played = false;
 		},
 		test() {
-
+			audio.download();
 		},
 		updateCurrentTime() {		
 			const time = audio.currentTime;
