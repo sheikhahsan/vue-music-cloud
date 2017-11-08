@@ -25,3 +25,7 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+VueJS Music Player
+
+![alt text](https://user-images.githubusercontent.com/19500703/32566277-5e325880-c4d9-11e7-9f1a-170a522cf675.png)
