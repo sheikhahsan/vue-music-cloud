@@ -14,6 +14,8 @@
 	<p></p>
 	<div class="ui sixteen column grid">
 		<div class="one wide column">
+		</div>
+		<div class="one wide column">
     		<img class="ui mini image" :src="song.img">
 		</div>
 		<div class="two wide column">
@@ -34,26 +36,20 @@
 		</div>
 		<div class="five wide column">
 		</div>
-		<div class="five wide right floated column">
+		<div class="four wide right floated column">
 			<div class="ui twelve column grid">
-				<div class="five wide column">
+				<div class="seven wide column">
 					<div class="ui sa-bod text icon">
 						{{ durationPlayed.min + ':' + durationPlayed.sec + '/' + duration.min + ':' + duration.sec }}
 					</div>
 				</div>
 				<div class="two wide column">
 					<a :href="song.src" download>
-						<i class="large arrow circle down inverted icon"></i>
+						<i class="large arrow circle down inverted icon" title="Download"></i>
 					</a>
 				</div>
 				<div class="two wide column">
 					<a href="" @click.prevent><i :class="{'large retweet inverted icon': true, 'teal': loop}" @click="loop=!loop"></i></a>
-				</div>
-				<div class="two wide column">
-					<i class="large empty star icon"></i>
-				</div>
-				<div class="two wide column">
-					<i class="big volume up icon"></i>
 				</div>
 			</div>
 		</div>
